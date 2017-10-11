@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.imooc.dao.ArticleDao">
+  	
+  	
+  	
+  	<!--查询全部记录，并且排序 -->
+  	<select id="queryDefaultByDate" resultType="Article">
+  		select 
+  		id,title,date,visitCount,summary,content,tag,graded,gradedCount,classification
+  		from article
+  		order by date desc
+  		limit 0,10
+  	</select>
+  	<select id="queryDefaultByGraded" resultType="Article">
+  		select 
+  		id,title,date,visitCount,summary,content,tag,graded,gradedCount,classification
+  		from article
+  		order by graded desc
+  		limit 0,10
+  	</select>
+  	
+  	<!-- 分类查询 -->
+  	<select id="queryClassificationByDate" resultType="Article">
+  		select 
+  		id,title,date,visitCount,summary,content,tag,graded,gradedCount,classification
+  		from article 
+  		where classification=#{value}
+  		order by date desc
+  		limit 0,#{number}
+  	</select>
+  	<!-- 分类查询 -->
+  	<select id="queryClassificationByGraded" resultType="Article">
+  		select 
+  		id,title,date,visitCount,summary,content,tag,graded/gradedCount as graded,gradedCount,classification
+  		from article 
+  		where classification=#{value}
+  		order by graded desc
+  		limit 0,#{number}
+  	</select>
+  	
+  	<!-- 通过id查询一篇文章 -->
+  	<select id="queryByArticle" resultType="Article" >
+  		select 
+  		id,title,date,visitCount,summary,content,tag,graded,gradedCount,classification
+  		from article 
+  		where id=#{id}
+  	</select>
+  	
+  	
+  	<!-- 更新评分 -->
+  	<update id="updateByIdGraded">
+  		update article 
+  		set graded=graded+#{grade} ,
+  		gradedCount=gradedCount+1 
+  		where id = #{id} 
+  	</update>
+  	
+  	<!-- 更新访问人数 -->
+  	<update id="updateByIdVisit">
+  		update article 
+  		set 
+  		visitCount=visitCount+1
+  		where id = #{id} 
+  	</update>
+  	
+  	<!-- 获取某个分类的文章总数 -->
+  	<select id="getCount" resultType="Integer">
+  		select 
+  		count(*)
+  		from article 
+  		where classification=#{value}
+  	</select>
+  </mapper>
