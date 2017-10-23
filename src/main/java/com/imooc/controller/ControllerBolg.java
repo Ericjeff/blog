@@ -20,12 +20,12 @@ public class ControllerBolg {
 	@Autowired
 	private ArticleService articleServer;
 	
-	@RequestMapping(value = "/data/index/{name}", 
+	@RequestMapping(value = "/data/index/{name}/{number}", 
 			method = RequestMethod.GET, 
 			produces = { "application/json;charset=UTF-8" })
 	@ResponseBody
-	public Result<List<Article>> queryIndexDefault(@PathVariable String name){
-		return articleServer.queryDefault(name);
+	public Result<List<Article>> queryIndexDefault(@PathVariable String name,@PathVariable String number){
+		return articleServer.queryDefault(name,number);
 	}
 	
 	

@@ -12,7 +12,7 @@ public interface ArticleService {
 	 * 获取默认查询
 	 * 
 	 */
-	public Result<List<Article>> queryDefault(String sortName);
+	public Result<List<Article>> queryDefault(String sortName,String number);
 	
 	
 	

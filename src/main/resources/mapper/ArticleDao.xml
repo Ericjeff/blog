@@ -13,14 +13,14 @@
   		id,title,date,visitCount,summary,content,tag,graded,gradedCount,classification
   		from article
   		order by date desc
-  		limit 0,10
+  		limit 0,#{number}
   	</select>
   	<select id="queryDefaultByGraded" resultType="Article">
   		select 
   		id,title,date,visitCount,summary,content,tag,graded,gradedCount,classification
   		from article
   		order by graded desc
-  		limit 0,10
+  		limit 0,#{number}
   	</select>
   	
   	<!-- 分类查询 -->

@@ -22,11 +22,16 @@ public class TestService {
 	private static final Logger log = Logger.getLogger(TestService.class);
 	@Test
 	public void testqueryDefault(){
-		Result<List<Article>> result  = articleService.queryDefault("");
+		Result<List<Article>> result  = articleService.queryDefault("","2");
 		/*for(Article art:result.getData()){
 			log.info("id:"+art.getId());
 		}*/
 		log.info("=============:"+result.getData()+",,"+result.getInfo());
+		int i=1;
+		for(Article a:result.getData()){
+			System.out.println("num:"+i+","+a.getId());
+			i++;
+		}
 	}
 	
 	

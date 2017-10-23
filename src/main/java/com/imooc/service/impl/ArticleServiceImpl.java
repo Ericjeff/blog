@@ -25,17 +25,25 @@ public class ArticleServiceImpl implements ArticleService {
 	private static final Logger log = Logger.getLogger(ArticleServiceImpl.class);
 	
 	@Override
-	public Result<List<Article>> queryDefault(String sortName) {
+	public Result<List<Article>> queryDefault(String sortName,String number) {
 		
 		//判断sortName是否为非法字符
 		log.info("<-------queryDefault----------->判断sortName是否为非法字符");
 		List<Article> list;
+		if(number==null||number.equals(""))
+			return new Result<List<Article>>(BlogEnum.FAIL,null);
+		int number1;
+		try{
+			 number1 = Integer.parseInt(number)*10;
+		}catch(Exception e){
+			number1 = 10;
+		}
 		if(sortName.equals("date")){
-			list = articleDao.queryDefaultByDate();
+			list = articleDao.queryDefaultByDate(number1);
 		}else if(sortName.equals("graded"))
-			list = articleDao.queryDefaultByGraded();
+			list = articleDao.queryDefaultByGraded(number1);
 		else
-			list = articleDao.queryDefaultByDate();
+			list = articleDao.queryDefaultByDate(number1);
 			
 		try{
 			for(Article art:list){

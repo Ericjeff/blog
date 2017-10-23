@@ -21,7 +21,7 @@ public class TestDao {
 	
 	@Test
 	public void testQueryDefault(){
-		List<Article> lists = artDao.queryDefaultByGraded();//artDao.queryDefaultByDate();
+		List<Article> lists = artDao.queryDefaultByGraded(1);//artDao.queryDefaultByDate();
 		for(Article art:lists){
 			//System.out.println(art.getId());
 			log.info(art.getId());

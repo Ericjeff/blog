@@ -12,9 +12,9 @@ public interface ArticleDao{
 	 * 默认查询
 	 * 
 	 */
-	public List<Article> queryDefaultByDate();
+	public List<Article> queryDefaultByDate(@Param("number")int number);
 	
-	public List<Article> queryDefaultByGraded();
+	public List<Article> queryDefaultByGraded(@Param("number")int number);
 	
 	/**
 	 * 
