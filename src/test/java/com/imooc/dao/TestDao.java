@@ -1,5 +1,6 @@
 package com.imooc.dao;
 
+import java.util.Date;
 import java.util.List;
 import org.junit.Test;
 import org.apache.log4j.Logger;
@@ -61,5 +62,25 @@ public class TestDao {
 	@Test
 	public void testgetCount(){
 		log.info(artDao.getCount("网站制作"));
+	}
+	
+	
+	@Test
+	public void TestdeleteById(){
+		System.out.println(artDao.deleteById(4));
+	}
+	
+	@Test
+	public void TestUpdate(){
+		Article article = new Article(5,"win7中装ubuntu16.04",new Date(),20,"win7中装ubuntu16.04","content","tag",23.0,23,"other");
+		
+		System.out.println(artDao.modifyArticle(article));
+	}
+	
+	@Test
+	public void Testinsert(){
+		Article article = new Article(5,"win7中装ubuntu16.04",new Date(),20,"win7中装ubuntu16.04",
+				"content","tag",23.0,23,"other");
+		System.out.println(artDao.addArticle(article));
 	}
 }

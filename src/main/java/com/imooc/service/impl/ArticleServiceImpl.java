@@ -137,10 +137,14 @@ public class ArticleServiceImpl implements ArticleService {
 			log.info(e.getMessage());
 			grades = 0;
 		}
-		int i = articleDao.updateByIdGraded(num, grades);
+		
+		double gradess = articleDao.queryByArticle(num).getGraded();
+		double result = ((grades+gradess)/2)%6;
+		int i = articleDao.updateByIdGraded(num,result );
+		
 		if(i==0)
 			return new Result<String>(BlogEnum.FAIL,"");
-		return new Result<String>(BlogEnum.SUCCESS,"");//
+		return new Result<String>(BlogEnum.SUCCESS,result+"");
 	}
 	
 }

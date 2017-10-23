@@ -53,4 +53,26 @@ public interface ArticleDao{
 	 * 获取某个分类的文章总数
 	 */
 	public int getCount(@Param("value")String value);
+	
+	
+	
+	/**
+	 * 插入
+	 * 
+	 */
+	public int addArticle(Article article);
+	
+	
+	
+	/**
+	 * 删除
+	 */
+	public int deleteById(@Param("id")int id);
+	
+	
+	
+	/**
+	 * 修改
+	 */
+	public int modifyArticle(Article article);
 }

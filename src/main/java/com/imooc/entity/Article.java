@@ -32,6 +32,21 @@ public class Article {
 	public Article() {
 
 	}
+	
+	public Article(int id, String title, Date date, int visitCount, String summary, String content, String tag,
+			double graded, int gradedCount, String classification) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.date = date;
+		this.visitCount = visitCount;
+		this.summary = summary;
+		this.content = content;
+		this.tag = tag;
+		this.graded = graded;
+		this.gradedCount = gradedCount;
+		this.classification = classification;
+	}
 
 	public int getId() {
 		return id;

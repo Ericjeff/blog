@@ -54,7 +54,7 @@
   	<!-- 更新评分 -->
   	<update id="updateByIdGraded">
   		update article 
-  		set graded=graded+#{grade} ,
+  		set graded=#{grade} ,
   		gradedCount=gradedCount+1 
   		where id = #{id} 
   	</update>
@@ -74,4 +74,31 @@
   		from article 
   		where classification=#{value}
   	</select>
+  	
+  	<!-- 通过id删除文章 -->
+  	<delete id="deleteById">
+  		delete from article where id=#{id}
+  	</delete>
+  	
+  	<!-- 修改文章 -->
+  	<update id="modifyArticle">
+  		update article set 
+  			title=#{title},date=#{date},
+  			visitCount=#{visitCount},
+  			summary=#{summary},content=#{content},
+  			tag=#{tag},graded=#{graded},
+  			gradedCount=#{gradedCount},
+  			classification=#{classification}
+  		where id=#{id}
+  	</update>
+  	
+  	<!-- 增加文章 -->
+  	<insert id="addArticle">
+  		insert into article(title,date,visitCount,
+  		summary,content,tag,graded,gradedCount,classification) 
+  		values
+  		(#{title},#{date},#{visitCount},#{summary},#{content},
+  		#{tag},#{graded},#{gradedCount},#{classification})
+  	</insert>
+  	
   </mapper>
