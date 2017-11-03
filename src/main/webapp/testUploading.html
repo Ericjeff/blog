@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>testupload</title>
+</head>
+<body>
+	
+	<form action="/Blog/admin/uploading" modelAttribute="multiFileUploadForm" method="post"
+  enctype="multipart/form-data">
+		
+		<input type="text" name="title"/><br/>
+		<input type="text" name="tag"/><br/>
+		<input type="text" name="summary"/><br/>
+		<input type="text" name="classification"/><br/>
+		<input type="file" name="multiUploadFile"/><br/>
+		<input type="submit" value="submit">
+	</form>
+</body>
+</html>

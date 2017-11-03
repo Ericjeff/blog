@@ -33,6 +33,15 @@ public class Article {
 
 	}
 	
+	public Article(String title, String summary, String content, String tag, String classification) {
+		super();
+		this.title = title;
+		this.summary = summary;
+		this.content = content;
+		this.tag = tag;
+		this.classification = classification;
+	}
+
 	public Article(int id, String title, Date date, int visitCount, String summary, String content, String tag,
 			double graded, int gradedCount, String classification) {
 		super();

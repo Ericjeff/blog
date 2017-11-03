@@ -47,5 +47,13 @@
 	<!-- 扫描相关的web的bean -->
 	 <context:component-scan base-package="com.imooc.controller"/>
 	 
+	  <!-- multipartResolver来解析带enctype="multipart/form-data"属性的表单 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	    <property name="defaultEncoding" value="utf-8"></property>
+	    <property name="maxUploadSize" value="104857600"></property>
+	    <property name="maxInMemorySize" value="40960"></property>
+	    <property name="resolveLazily" value="true"></property>
+	</bean>
+	 
 	 <!-- 拦截器-->
 </beans>

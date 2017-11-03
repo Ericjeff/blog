@@ -11,6 +11,7 @@ D:\eclipse\javaworkplace\Blog\src\main\java\com\imooc\dto\Result.java
 D:\eclipse\javaworkplace\Blog\src\main\java\com\imooc\exception\FailException.java
 D:\eclipse\javaworkplace\Blog\src\main\java\com\imooc\service\AdminService.java
 D:\eclipse\javaworkplace\Blog\src\main\java\com\imooc\entity\Admin.java
+D:\eclipse\javaworkplace\Blog\src\main\java\com\imooc\dto\MultiFileUploadForm.java
 D:\eclipse\javaworkplace\Blog\src\main\java\com\imooc\exception\NoDataException.java
 D:\eclipse\javaworkplace\Blog\src\main\java\com\imooc\service\impl\AdminServiceImpl.java
 D:\eclipse\javaworkplace\Blog\src\main\java\com\imooc\filter\CORSFilter.java

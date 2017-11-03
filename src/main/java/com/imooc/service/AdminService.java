@@ -1,5 +1,10 @@
 package com.imooc.service;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.web.multipart.MultipartFile;
+
+import com.imooc.dto.MultiFileUploadForm;
 import com.imooc.dto.Result;
 import com.imooc.entity.Admin;
 import com.imooc.entity.Article;
@@ -36,4 +41,16 @@ public interface AdminService {
 	 */
 	
 	public Result<String> addArticle(Article article);
+	
+	
+	/**
+	 * 添加文章，将markdown解析成html
+	 */
+	public Result<String> addParseHtml(MultiFileUploadForm multiFileUploadForm);
+	
+	
+	/**
+	 * 上传图片,返回url
+	 */
+	public Result<String> uploadPicture(MultipartFile picture,HttpServletRequest request);
 }
